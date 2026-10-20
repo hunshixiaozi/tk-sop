@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美区 TikTok 带货账号 · 评论区运营 SOP</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    background: #fafafa;
+    color: #161823;
+    line-height: 1.65;
+    padding: 0;
+  }
+  header {
+    background: linear-gradient(135deg, #ff2d55 0%, #25f4ee 100%);
+    color: white;
+    padding: 60px 40px 50px;
+    text-align: center;
+  }
+  header h1 {
+    font-size: 2.4em;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+  header p {
+    font-size: 1.1em;
+    opacity: 0.95;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  header .meta {
+    margin-top: 20px;
+    font-size: 0.85em;
+    opacity: 0.8;
+  }
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+  section {
+    margin-bottom: 56px;
+    background: white;
+    border-radius: 16px;
+    padding: 36px 40px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
+  }
+  h2 {
+    font-size: 1.6em;
+    font-weight: 800;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 3px solid #ff2d55;
+    display: inline-block;
+    color: #161823;
+  }
+  h3 {
+    font-size: 1.15em;
+    font-weight: 700;
+    margin: 24px 0 14px;
+    color: #ff2d55;
+  }
+  h4 {
+    font-size: 1.02em;
+    font-weight: 700;
+    margin: 18px 0 10px;
+    color: #161823;
+  }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 14px 22px; }
+  li { margin-bottom: 6px; }
+
+  .intro-block {
+    background: linear-gradient(135deg, #fff5f7 0%, #f0fffe 100%);
+    border-left: 4px solid #ff2d55;
+    padding: 20px 24px;
+    border-radius: 8px;
+    margin-bottom: 24px;
+  }
+  .intro-block strong { color: #ff2d55; }
+
+  /* 语言速查表 */
+  .slang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 12px;
+    margin: 14px 0;
+  }
+  .slang-card {
+    background: #f5f5f7;
+    border-radius: 10px;
+    padding: 12px 14px;
+  }
+  .slang-card .term {
+    font-weight: 700;
+    color: #ff2d55;
+    font-size: 1.05em;
+  }
+  .slang-card .meaning {
+    font-size: 0.88em;
+    color: #555;
+    margin-top: 2px;
+  }
+  .slang-card .example {
+    font-size: 0.82em;
+    color: #888;
+    font-style: italic;
+    margin-top: 4px;
+  }
+
+  /* 模板卡片 */
+  .template-block {
+    border: 1px solid #ebebeb;
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin: 16px 0;
+    background: #fcfcfd;
+  }
+  .template-label {
+    display: inline-block;
+    background: #25f4ee;
+    color: #0a4a47;
+    font-size: 0.72em;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .reply-line {
+    font-family: -apple-system, 'Helvetica Neue', sans-serif;
+    background: #1a1a1a;
+    color: #e8e8e8;
+    padding: 10px 14px;
+    border-radius: 8px;
+    margin: 8px 0;
+    font-size: 0.92em;
+    line-height: 1.5;
+  }
+  .reply-line .hl { color: #ff6b8a; }
+  .reply-line .em { color: #25f4ee; }
+  .use-case {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 6px;
+    padding: 4px 10px;
+    background: #f0f7ff;
+    border-radius: 6px;
+    display: inline-block;
+  }
+  .reply-cn {
+    background: #fff0f3;
+    color: #c92a58;
+    padding: 7px 14px;
+    border-radius: 0 0 8px 8px;
+    margin-top: -6px;
+    margin-bottom: 8px;
+    font-size: 0.84em;
+    line-height: 1.5;
+    border-left: 3px solid #ff2d55;
+    font-style: italic;
+  }
+  /* === Product-specific cards === */
+  .product-group { margin-bottom: 36px; }
+  .product-group-title {
+    font-size: 1.05em; font-weight: 700; color: #25f4ee;
+    background: #0a4a47; padding: 10px 16px; border-radius: 8px;
+    margin-bottom: 16px;
+  }
+  .prod-card {
+    border: 1px solid #ececec; border-radius: 14px; padding: 22px 24px;
+    margin-bottom: 20px; background: #fcfcfd;
+  }
+  .prod-head {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 14px;
+    flex-wrap: wrap;
+  }
+  .prod-emoji { font-size: 1.8em; }
+  .prod-name { font-size: 1.2em; font-weight: 800; color: #161823; }
+  .prod-tag {
+    font-size: 0.72em; font-weight: 700; color: #fff;
+    background: #ff2d55; padding: 3px 10px; border-radius: 10px;
+  }
+  .prod-angle {
+    background: linear-gradient(90deg, #fff5f7, #f0fffe);
+    padding: 10px 14px; border-radius: 8px;
+    font-size: 0.88em; color: #555; margin-bottom: 16px;
+    border-left: 3px solid #25f4ee;
+  }
+  .prod-angle strong { color: #ff2d55; }
+  .prod-scenes h4 {
+    font-size: 0.95em; font-weight: 700; color: #161823;
+    margin: 14px 0 8px; padding-left: 10px;
+    border-left: 3px solid #ff2d55;
+  }
+  .prod-scene-row {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+    margin-bottom: 10px;
+  }
+  .prod-scene-label {
+    font-size: 0.82em; color: #888; margin-bottom: 4px;
+    font-style: italic;
+  }
+  .prod-alt-seed h4 {
+    font-size: 0.95em; font-weight: 700; color: #25f4ee;
+    margin: 14px 0 8px; padding-left: 10px;
+    border-left: 3px solid #25f4ee;
+  }
+  .prod-objection {
+    margin-top: 14px; padding: 12px 16px; background: #fffbe6;
+    border: 1px solid #ffe58f; border-radius: 8px;
+  }
+  .prod-objection .ob-label {
+    font-size: 0.8em; font-weight: 700; color: #ad8b00;
+    text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px;
+  }
+  @media (max-width: 640px) {
+    .prod-scene-row { grid-template-columns: 1fr; }
+  }
+  .triggers {
+    font-size: 0.85em;
+    color: #999;
+    margin-bottom: 10px;
+  }
+  .triggers code {
+    background: #fff0f2;
+    color: #ff2d55;
+    padding: 1px 7px;
+    border-radius: 4px;
+    font-size: 0.82em;
+    margin-right: 4px;
+  }
+
+  /* 安全规则 */
+  .warn-box {
+    background: #fff5f5;
+    border: 1px solid #ffccd0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 12px 0;
+  }
+  .safe-box {
+    background: #f0fff4;
+    border: 1px solid #b8e6c1;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 12px 0;
+  }
+  .warn-box strong { color: #c0392b; }
+  .safe-box strong { color: #1e8449; }
+
+  /* 时间轴 */
+  .timeline {
+    position: relative;
+    padding-left: 28px;
+    margin: 16px 0;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: linear-gradient(180deg, #ff2d55, #25f4ee);
+  }
+  .tl-item {
+    position: relative;
+    margin-bottom: 18px;
+  }
+  .tl-item::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ff2d55;
+    border: 2px solid white;
+    box-shadow: 0 0 0 2px #ff2d55;
+  }
+  .tl-time {
+    font-weight: 700;
+    color: #ff2d55;
+    font-size: 0.92em;
+  }
+
+  /* 比例条形图 */
+  .ratio-bar {
+    display: flex;
+    height: 32px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 14px 0 6px;
+    font-size: 0.75em;
+    font-weight: 700;
+    color: white;
+  }
+  .ratio-bar div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ratio-1 { background: #ff2d55; flex: 4; }
+  .ratio-2 { background: #ff7b88; flex: 3; }
+  .ratio-3 { background: #25f4ee; color: #0a4a47; flex: 2; }
+  .ratio-4 { background: #ffc107; color: #5a3e00; flex: 1; }
+  .ratio-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.82em;
+    color: #666;
+  }
+  .ratio-legend span::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    margin-right: 5px;
+    vertical-align: middle;
+  }
+
+  /* tab 切换 */
+  .tab-nav {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+    flex-wrap: wrap;
+  }
+  .tab-btn {
+    padding: 10px 16px;
+    border: none;
+    background: transparent;
+    font-size: 0.9em;
+    font-weight: 600;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    color: #888;
+    transition: all 0.2s;
+  }
+  .tab-btn.active {
+    border-bottom-color: #ff2d55;
+    color: #ff2d55;
+  }
+  .tab-content { display: none; }
+  .tab-content.active { display: block; }
+
+  /* 快速卡片 */
+  .quick-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+  }
+  .quick-card {
+    background: #fafafa;
+    border-left: 3px solid #ff2d55;
+    border-radius: 8px;
+    padding: 16px 18px;
+  }
+  .quick-card h4 {
+    color: #ff2d55;
+    margin: 0 0 8px;
+    font-size: 0.95em;
+  }
+  .quick-card .reply-line {
+    background: #2a2a2a;
+    font-size: 0.82em;
+    padding: 8px 12px;
+  }
+
+  /* FAQ 风格 */
+  .qna {
+    margin: 12px 0;
+    padding: 14px 18px;
+    background: #fafafa;
+    border-radius: 8px;
+  }
+  .qna .q {
+    font-weight: 700;
+    color: #161823;
+    margin-bottom: 6px;
+  }
+  .qna .a {
+    color: #555;
+    font-size: 0.92em;
+  }
+
+  /* 底部 */
+  footer {
+    text-align: center;
+    padding: 40px 20px 60px;
+    color: #aaa;
+    font-size: 0.85em;
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 24px 20px; }
+    header { padding: 40px 20px 36px; }
+    header h1 { font-size: 1.7em; }
+    h2 { font-size: 1.3em; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>美区 TikTok 带货账号 · 评论区运营 SOP</h1>
+  <p>真实 · 随性 · 不做作 —— 用 Gen Z 的方式运营你的评论区</p>
+  <div class="meta">Version 1.0 · 2025 · 适用场景：TikTok Shop / 独立站引流 / 直播预热</div>
+</header>
+
+<main>
+
+<!-- ===================== PART 0: 核心原则 ===================== -->
+<section>
+  <h2>🎯 这份 SOP 要解决什么</h2>
+  <div class="intro-block">
+    <p>美区 TikTok 评论区的核心生态只有一个词：<strong>authenticity</strong>。</p>
+    <p>用户一眼就能看出哪些是"机翻客服"、哪些是"真实女孩"。这份文档帮你在评论区建立 <strong>可信、有温度、不硬广</strong> 的形象，同时解决三个实际问题：</p>
+    <ul>
+      <li><strong>不知道怎么回</strong> —— 9 类常见评论 × 每类 3-5 个可直接用的真实模板</li>
+      <li><strong>想自己先把评论区"炒热"</strong> —— 小号人设搭建、节奏、安全红线</li>
+      <li><strong>怕翻车被限流</strong> —— 明确的禁忌清单和安全规则</li>
+    </ul>
+  </div>
+  <p style="font-size: 0.9em; color: #777;"><em>使用方式：先看 Part 1 打基础 → 用 Part 2 的模板直接套 → Part 3/4 制定执行节奏 → 收藏 Part 6 快速卡片随时查阅。</em></p>
+</section>
+
+<!-- ===================== PART 1: 语言指南 ===================== -->
+<section>
+  <h2>🗣️ Part 1 · 美区 TikTok 评论用语速查</h2>
+  <p style="margin-bottom: 16px;">核心原则：<strong>自然 > 正确</strong>。不要每句都加 emoji，不要用完整长句子，不要用"Dear customer"式的客服语气。</p>
+
+  <h3>✅ 推荐使用的 Slang（每 5 条回复里出现 1-2 个就够了）</h3>
+  <div class="slang-grid">
+    <div class="slang-card">
+      <div class="term">no cap</div>
+      <div class="meaning">不骗你，说真的</div>
+      <div class="example">"no cap this slaps"</div>
+    </div>
+    <div class="slang-card">
+      <div class="term">fr / fr fr</div>
+      <div class="meaning">for real，真的</div>
+      <div class="example">"fr i need this"</div>
+    </div>
+    <div class="slang-card">
+      <div class="term">lowkey / highkey</div>
+      <div class="meaning">有点 / 非常</div>
+      <div class="example">"lowkey obsessed"</div>
+    </div>
+    <div class="slang-card">
+      <div class="term">this is giving…</div>
+      <div class="meaning">这感觉就像…</div>
+      <div class="example">"this is giving boujie"</div>
+    </div>
+    <div class="slang-card">
+      <div class="term">the way i need this</div>
+      <div class="meaning">我太需要了（夸张表达）</div>
+      <div class="example">"the way i need this 😭"</div>
+    </div>
+    <div class="slang-card">
+      <div class="term">bet</div>
+      <div class="meaning">好的 / 没问题 / 你说的对</div>
+      <div class="example">"bet, sending rn"</div>
+    </div>
+    <div class="slang-card">
+      <div class="term">bussin / slaps</div>
+      <div class="meaning">真不错 / 好东西</div>
+      <div class="example">"this thing SLAPS"</div>
+    </div>
+    <div class="slang-card">
+      <div class="term">dead / 💀</div>
+      <div class="meaning">笑死</div>
+      <div class="example">"i’m dead 💀💀"</div>
+    </div>
+    <div class="slang-card">
+      <div class="term">periodt</div>
+      <div class="meaning">就是这样（强调观点）</div>
+      <div class="example">"cheap jewelry hurts ur skin periodt"</div>
+    </div>
+    <div class="slang-card">
+      <div class="term">say less</div>
+      <div class="meaning">别说了我懂 / 没问题</div>
+      <div class="example">"say less, link in bio"</div>
+    </div>
+    <div class="slang-card">
+      <div class="term">real</div>
+      <div class="meaning">确实，同意</div>
+      <div class="example">"real, quality hits different"</div>
+    </div>
+    <div class="slang-card">
+      <div class="term">bestie / queen</div>
+      <div class="meaning">亲切称呼（不认识的女生也能用）</div>
+      <div class="example">"get it bestie 🫶"</div>
+    </div>
+  </div>
+
+  <h3>❌ 典型机翻味道特征（如果你的回复里有这些，立刻改掉）</h3>
+  <div class="warn-box">
+    <ul>
+      <li><strong>"Thank you for your comment!"</strong> → 太正式。改成 "yesss 🔥" 或 "omggg good taste"</li>
+      <li><strong>"If you have any questions, please feel free to ask"</strong> → 客服腔。改成 "lmk if u need anything else!"</li>
+      <li><strong>每句结尾都加 ❗❗❗ 或 💯💯💯</strong> → 夸张过度，显得假</li>
+      <li><strong>完整的复合句</strong> → TK评论全是碎碎念，用短句</li>
+      <li><strong>"Hope you have a nice day"</strong> → 礼貌但空洞。改成 "enjoyyyy ✨"</li>
+      <li><strong>过度纠正用户</strong> → "Actually it's better to…" 改成 "lowkey i thought the same at first but…"</li>
+    </ul>
+  </div>
+
+  <h3>🎨 Emoji 使用指南</h3>
+  <div class="safe-box">
+    <p>✅ 美区高频安全 emoji：😭 💀 🫶 ✨ 🔥 👀 🛍️ 🚚 💯 😌 🤝</p>
+    <p>❌ 少用或不用：❌ ❗ ❓ 🇨🇳 👋（挥手=拜拜但TK里有人理解为"滚"） 🥺（过度卖惨感）</p>
+    <p>⚠️ 规则：每条回复 <strong>1-3 个</strong> emoji 就够，放在句尾或自然嵌入</p>
+  </div>
+</section>
+
+<!-- ===================== PART 2: 回复模板 ===================== -->
+<section>
+  <h2>💬 Part 2 · 9 类评论回复范式集合</h2>
+  <p style="margin-bottom: 16px;">点击下方分类切换。每个模板给出 <strong>使用场景</strong>，按需取用。<em>（模板中的 ✨ 💀 等 emoji 可以随机替换，不要每次都一模一样）</em></p>
+
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('cat1')">1. 正向喜爱</button>
+    <button class="tab-btn" onclick="switchTab('cat2')">2. 产品咨询</button>
+    <button class="tab-btn" onclick="switchTab('cat3')">3. 价格异议</button>
+    <button class="tab-btn" onclick="switchTab('cat4')">4. 物流运输</button>
+    <button class="tab-btn" onclick="switchTab('cat5')">5. 负面投诉</button>
+    <button class="tab-btn" onclick="switchTab('cat6')">6. 对比竞品</button>
+    <button class="tab-btn" onclick="switchTab('cat7')">7. 引导互动</button>
+    <button class="tab-btn" onclick="switchTab('cat8')">8. 垃圾广告</button>
+    <button class="tab-btn" onclick="switchTab('cat9')">9. UGC 分享</button>
+  </div>
+
+  <!-- Category 1 -->
+  <div id="cat1" class="tab-content active">
+    <div class="triggers">触发关键词：<code>love this</code> <code>need this</code> <code>fire</code> <code>obsessed</code> <code>perfect</code> <code>take my money</code> <code>OMG</code></div>
+
+    <div class="template-block">
+      <div class="template-label">短平快 · 最常用</div>
+      <div class="reply-line">fr i'm <span class="hl">lowkey obsessed</span> with it too <span class="em">😭✨</span></div>
+      <div class="use-case">别人说好东西，你也热情回应，制造共鸣</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">带转化引导</div>
+      <div class="reply-line">yesss get it <span class="hl">bestie</span> 🫶 <span class="hl">link in bio</span> if u haven't already!</div>
+      <div class="use-case">对方明显有购买意愿，顺便提一嘴购买渠道</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">用梗 · 有记忆点</div>
+      <div class="reply-line"><span class="hl">no cap</span> this thing <span class="hl">SLAPS</span> u won't regret it <span class="em">💯</span></div>
+      <div class="use-case">强化好品质的印象，"SLAPS" 很有力量感</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">共鸣型</div>
+      <div class="reply-line">the way u just saved my wallet <span class="hl">AND</span> my aesthetic omg <span class="em">🔥</span></div>
+      <div class="use-case">用夸张表达和对方情绪对齐，"救了钱包又救了审美"</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">真实背书</div>
+      <div class="reply-line"><span class="hl">real talk</span> i use this every single day worth every penny <span class="em">fr</span></div>
+      <div class="use-case">暗示你自己也在用，不是纯卖货</div>
+    </div>
+  </div>
+
+  <!-- Category 2 -->
+  <div id="cat2" class="tab-content">
+    <div class="triggers">触发关键词：<code>what size</code> <code>what material</code> <code>does it fit</code> <code>how long</code> <code>does it come in</code> <code>waterproof</code> <code>how to clean</code></div>
+
+    <div class="template-block">
+      <div class="template-label">直接给答案 + 附加建议</div>
+      <div class="reply-line">good question! it's <span class="hl">100% cotton</span>, runs <span class="hl">true to size</span> ✨ if ur between sizes size up!</div>
+      <div class="use-case">问尺寸/材质，直接给信息+小tip（增加信任感）</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">带引导的信息回复</div>
+      <div class="reply-line">ooh great taste — this one comes in <span class="hl">black, cream + sage green</span> 🌿 <span class="hl">link has all color options!</span></div>
+      <div class="use-case">对方问颜色/款式，回答+引导看完整商品页</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">增加场景背书</div>
+      <div class="reply-line">it's actually perfect for that! i use it for <span class="hl">具体场景</span> all the time <span class="em">😌</span></div>
+      <div class="use-case">对方问"适合XX吗"，用你自己的使用场景增强可信度</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">先打消疑虑再答</div>
+      <div class="reply-line">honestly i was skeptical too but it's surprisingly durable — mine's been through like <span class="hl">20 washes</span></div>
+      <div class="use-case">对方问"质量好不好"，先用"我自己也怀疑过"建立共情，再给实锤</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">模糊但有用（需要用户进一步动作时）</div>
+      <div class="reply-line">check the <span class="hl">product description</span> it has all the specs! <span class="hl">lmk</span> if u still can't find it <span class="em">✨</span></div>
+      <div class="use-case">细节太多不想在评论区贴，引导看详情页但留了兜底</div>
+    </div>
+  </div>
+
+  <!-- Category 3 -->
+  <div id="cat3" class="tab-content">
+    <div class="triggers">触发关键词：<code>too expensive</code> <code>overpriced</code> <code>that's pricey</code> <code>can't afford</code> <code>why so much</code></div>
+
+    <div class="template-block">
+      <div class="template-label">价值解释</div>
+      <div class="reply-line">i get it <span class="hl">fr</span>! but quality wise u won't find a comparable one for cheaper — we <span class="hl">cut out the middleman</span> ✂️</div>
+      <div class="use-case">解释为什么"值这个价"（跳过中间商、品质不同），不硬杠</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">长期价值视角</div>
+      <div class="reply-line"><span class="hl">lowkey valid</span>, but think of it this way — u won't need to replace this in 6 months <span class="em">😉</span></div>
+      <div class="use-case">先认可对方观点("说得有道理")，再给不同视角，避免对抗</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">直接给优惠（促转化）</div>
+      <div class="reply-line">we're running a <span class="hl">15% off sale</span> right now actually! <span class="hl">link in bio</span> 🛍️</div>
+      <div class="use-case">对方嫌贵但有意愿，直接砸优惠，促成下单</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">折中方案</div>
+      <div class="reply-line">heard! price matching isn't possible but we just dropped a <span class="hl">free shipping code</span> → <span class="hl">FREESHIP50</span></div>
+      <div class="use-case">你不想降价但可以给小甜头，同时展示"我们有在认真对待你的意见"</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">小号补刀（非官方账号）</div>
+      <div class="reply-line">honestly i thought that too until mine arrived — <span class="hl">quality hits different</span> fr worth it</div>
+      <div class="use-case">用小号账号发言，看起来是真实买家的反馈，更有说服力</div>
+    </div>
+  </div>
+
+  <!-- Category 4 -->
+  <div id="cat4" class="tab-content">
+    <div class="triggers">触发关键词：<code>how long to ship</code> <code>free shipping</code> <code>do u ship to</code> <code>tracking</code> <code>customs</code> <code>delivery</code></div>
+
+    <div class="template-block">
+      <div class="template-label">信息 + 激励组合</div>
+      <div class="reply-line">we ship <span class="hl">same day</span> and it arrives in <span class="hl">3-5 business days</span>! free shipping over $50 🚚</div>
+      <div class="use-case">问时效，同时给免费邮门槛，促进凑单</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">简洁直接</div>
+      <div class="reply-line">yep we ship <span class="hl">everywhere in the US</span>! tracking number goes straight to ur email once it's out ✉️</div>
+      <div class="use-case">简单问题直接答，不啰嗦</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">有人情味版</div>
+      <div class="reply-line">honestly shipping's been wild lately but our team's on it — <span class="hl">dm me ur order #</span> if it's taking too long!</div>
+      <div class="use-case">承认现实(物流可能慢)，同时主动给解决渠道，显得真实不官话</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">TikTok Shop 标准答法</div>
+      <div class="reply-line">all orders go through TikTok Shop logistics now! <span class="hl">check ur order tab</span> in the app for real-time tracking 📦</div>
+      <div class="use-case">美区TK Shop 全面改官方物流了，直接引导到app内查</div>
+    </div>
+  </div>
+
+  <!-- Category 5 -->
+  <div id="cat5" class="tab-content">
+    <div class="triggers">触发关键词：<code>broke</code> <code>arrived broken</code> <code>wrong item</code> <code>missing</code> <code>refund</code> <code>terrible</code> <code>cheap</code> <code>waste of money</code></div>
+
+    <div class="warn-box">
+      <strong>⚠️ 负面评论核心原则：</strong> 先共情 → 再道歉 → 给解决方案 → <strong>绝不</strong>在评论区撕逼。把争吵转移到私信里解决。一旦解决，礼貌请求对方考虑删除评论。
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">共情 + 行动（首选）</div>
+      <div class="reply-line">oh no that's awful <span class="hl">😭</span> i'm so sorry <span class="hl">dm me ur order #</span> and we'll fix this right away!</div>
+      <div class="use-case">最常用。不辩解，先共情，立刻给解决路径</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">诚恳版</div>
+      <div class="reply-line">that's not the experience we want for anyone… pls <span class="hl">dm support</span> we'll make it right <span class="em">💔</span></div>
+      <div class="use-case">比上面更正式一点，但仍然有人情味</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">邀请私聊</div>
+      <div class="reply-line">hmm sorry to hear that! can u dm me what exactly went wrong? <span class="hl">eager to sort this out</span></div>
+      <div class="use-case">情况不明时，先问清楚，但表现出积极性</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">极端恶意评论（理性处理）</div>
+      <div class="reply-line">we're always open to feedback but this feels harsh — <span class="hl">hope u have a better day</span> 🫶</div>
+      <div class="use-case">对方人身攻击或恶意找茬，不接招，优雅结束。其他观众会站你这边</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">其他用户替你说话（小号操作）</div>
+      <div class="reply-line">i've had mine for 3 months no issues — maybe just <span class="hl">a one-time thing</span>? 🤷‍♀️</div>
+      <div class="use-case">用小号在负面评论下面跟一句，暗示"可能是个别问题"，不要和投诉人对线</div>
+    </div>
+  </div>
+
+  <!-- Category 6 -->
+  <div id="cat6" class="tab-content">
+    <div class="triggers">触发关键词：<code>vs [品牌]</code> <code>is this better than</code> <code>why not just buy from</code> <code>compared to</code> <code>dupes</code></div>
+
+    <div class="template-block">
+      <div class="template-label">差异化解释</div>
+      <div class="reply-line">great q! honestly [竞品] is good but ours has <span class="hl">[独特卖点]</span> that sets it apart ✨</div>
+      <div class="use-case">正面回应，不踩竞品，讲自己的优势</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">不撕竞品版</div>
+      <div class="reply-line">we love [竞品] too <span class="hl">tbh</span> but this one's more <span class="hl">[特性]</span> for sure — check the reviews!</div>
+      <div class="use-case">甚至夸竞品，但找到自己的定位，显得格局大</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">真实感</div>
+      <div class="reply-line"><span class="hl">lowkey fair</span>, but the quality difference is real once u hold it. <span class="hl">no cap</span> 🤝</div>
+      <div class="use-case">先认可对方，再坚持自己的点，有说服力</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">小号版（第三方视角）</div>
+      <div class="reply-line">had both tbh… <span class="hl">this one feels way more premium</span> in hand, worth the extra $20</div>
+      <div class="use-case">小号假装"两个都用过"的真实买家，参考性更强</div>
+    </div>
+  </div>
+
+  <!-- Category 7 -->
+  <div id="cat7" class="tab-content">
+    <div class="triggers">触发关键词（主动发起，用小号）：引导他人评论、制造热度、social proof</div>
+
+    <div class="warn-box">
+      <strong>🧨 注意：</strong> 这类引导型评论 <strong>只允许小号发</strong>！官方账号发"comment for link"会被TK判定为 spam，有被限流风险。
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">召唤链接</div>
+      <div class="reply-line">WAIT <span class="hl">COMMENT FOR LINK ⬇️⬇️⬇️</span></div>
+      <div class="use-case">小号发，制造需求感。如果其他人跟着发"link pls"，评论区就活了</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">假装自己也想买</div>
+      <div class="reply-line">i need this so bad <span class="hl">someone tell me where to get it 👀</span></div>
+      <div class="use-case">小号提问制造真实感，官方账号可以稍后回复 "link in bio bestie 🫶"</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">夸张感叹</div>
+      <div class="reply-line">ok but <span class="hl">fr how do i buy this</span> send help <span class="em">😭</span></div>
+      <div class="use-case">同上，用更夸张的语气增加戏剧感</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">social proof</div>
+      <div class="reply-line">saw this on <span class="hl">3 different fyp's today</span> must be fire <span class="em">🔥</span></div>
+      <div class="use-case">暗示这条视频已经有热度，其他人都在看</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">行动感</div>
+      <div class="reply-line">not me already typing in the bio <span class="hl">🏃‍♀️💨</span></div>
+      <div class="use-case">假装自己已经在打开链接的路上了，给其他观众"我也要"的心理暗示</div>
+    </div>
+  </div>
+
+  <!-- Category 8 -->
+  <div id="cat8" class="tab-content">
+    <div class="triggers">触发关键词：不明链接、假客服、其他广告号、scam</div>
+
+    <div class="safe-box">
+      <p><strong>处理原则：</strong></p>
+      <ul>
+        <li>官方账号 <strong>直接删除</strong> 垃圾评论，不回复</li>
+        <li>留着给观众举报也行，但有经验的人会发现评论区有垃圾</li>
+        <li>可以让小号在下面吐槽一句，显得真实</li>
+      </ul>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">小号吐槽（可选）</div>
+      <div class="reply-line">nice try lol <span class="em">🤡</span></div>
+      <div class="use-case">小号在明显的广告评论下嘲讽一句，其他观众有共鸣</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">小号提醒举报</div>
+      <div class="reply-line">def a scam bot <span class="hl">ignore + report</span> ⚠️</div>
+      <div class="use-case">引导其他真实用户举报，同时防止有人被骗</div>
+    </div>
+  </div>
+
+  <!-- Category 9 -->
+  <div id="cat9" class="tab-content">
+    <div class="triggers">触发关键词：<code>just ordered</code> <code>can't wait</code> <code>arrived today</code> <code>unboxing</code> <code>my roommates are jealous</code> <code>love mine</code></div>
+
+    <div class="template-block">
+      <div class="template-label">鼓励型</div>
+      <div class="reply-line"><span class="hl">YESS</span> let us know how u love it when it comes in! <span class="em">🫶</span></div>
+      <div class="use-case">对方说刚下单，期待后续反馈</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">期待晒图</div>
+      <div class="reply-line">OMW <span class="hl">send pics</span> when u get it <span class="em">😭✨</span></div>
+      <div class="use-case">暗示对方可以拍UGC，未来可能合作或转发</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">玩梗互动</div>
+      <div class="reply-line"><span class="hl">real ones supporting real ones</span> — enjoy it queen 👑</div>
+      <div class="use-case">对方说已经在用/收到了，用梗回应显得懂行</div>
+    </div>
+
+    <div class="template-block">
+      <div class="template-label">转发邀请</div>
+      <div class="reply-line">love this! tag us in ur pics we <span class="hl">repost our faves weekly</span> 📸</div>
+      <div class="use-case">明确邀请对方发UGC并tag你，给激励（可能被转发）</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PART 3: 小号策略 ===================== -->
+<section>
+  <h2>🕵️ Part 3 · 小号自评论策略（Alt-Account Seeding Playbook）</h2>
+
+  <div class="intro-block">
+    <p>目标：在视频发布后 <strong>第一时间把评论区炒热</strong>，让真实用户点进来看到"这里已经有人在聊了"，从而降低跳出率、增加真实互动、触发TK算法的流量推荐。</p>
+    <p><strong>核心关键词：自然 · 分散 · 有真实行为痕迹</strong></p>
+  </div>
+
+  <h3>3.1 小号人设搭建清单</h3>
+  <div class="quick-grid">
+    <div class="quick-card">
+      <h4>🎭 头像</h4>
+      <p>真人感强的照片（自拍/生活照），不要网图套娃/卡通/风景。头像要像真实的美区 Z 世代。</p>
+    </div>
+    <div class="quick-card">
+      <h4>📍 昵称</h4>
+      <p>像真人的拼接式昵称：<em>emilyyy</em>、<em>jordan_12</em>、<em>sophie.c</em>、<em>mike_thatguy</em>、<em>alexisrae</em></p>
+    </div>
+    <div class="quick-card">
+      <h4>📝 简介</h4>
+      <p>一句话 about me：<em>she/her · coffee lover ☕ · plant mom</em> / <em>just here for the deals 🛍️</em> / <em>fitness journey in progress 💪</em></p>
+    </div>
+    <div class="quick-card">
+      <h4>🎬 发布历史</h4>
+      <p>不能是裸号！至少有 3-5 条自己的视频（搬运热点/日常片段/二创都可以），让账号有生命力。</p>
+    </div>
+    <div class="quick-card">
+      <h4>❤️ 互动痕迹</h4>
+      <p>平时正常刷 FYP、给别人点赞评论、关注博主。看起来是一个活跃的普通用户，不是只来给你刷评论的工具号。</p>
+    </div>
+    <div class="quick-card">
+      <h4>🗺️ 定位 & IP</h4>
+      <p>头像、昵称、定位、IP 要统一指向美区（或你的目标市场），不要出现矛盾。</p>
+    </div>
+  </div>
+
+  <h3>3.2 小号评论类型 & 比例（⚠️ 新号低风险版）</h3>
+
+  <div style="background:#fff9e6;border:1px solid #ffd93d;border-radius:10px;padding:12px 16px;margin-bottom:16px;font-size:0.88em;color:#555">
+    <strong>🆕 新号启动期（前 2 周）特殊规则：</strong>只发 <strong>提问型评论</strong>，不发任何种草/引导。第 3-4 周开始才加入少量温和种草。等账号有 100+ 真实 follower、自然互动起来后，再用下面的完整比例。
+  </div>
+
+  <p>不要让所有小号都说同样的话。按以下比例分散（情绪越温和越不像 bot）：</p>
+
+  <div class="ratio-bar">
+    <div class="ratio-1" style="flex:5">50%</div>
+    <div class="ratio-2" style="flex:2.5;color:#c92a58">25%</div>
+    <div class="ratio-3" style="flex:1.5;color:#0a4a47">15%</div>
+    <div class="ratio-4" style="flex:1;color:#5a3e00">10%</div>
+  </div>
+  <div class="ratio-legend">
+    <span style="color:#ff2d55">■ 50% 真实感提问</span>
+    <span style="color:#c92a58">■ 25% 温和种草（低情绪）</span>
+    <span style="color:#25f4ee">■ 15% 社交证据</span>
+    <span style="color:#ffc107">■ 10% 软购买意图</span>
+  </div>
+
+  <div style="margin-top:16px">
+    <h4>🔹 50% 真实感提问（最安全！TK bot 检测不出 fake）</h4>
+    <div class="reply-line">wait what <span class="hl">material</span> is this? looks sturdy</div>
+    <div class="reply-line">does it <span class="hl">come in smaller</span>? i'm 5'2 worried it'll be too big</div>
+    <div class="reply-line">honest reviews only — <span class="hl">is it worth $40</span>?</div>
+    <div class="reply-line">how long does it <span class="hl">usually take to ship</span>?</div>
+    <div class="reply-line">has anyone tried the <span class="hl">new 2025 version</span>?</div>
+  </div>
+
+  <div>
+    <h4>🔹 25% 温和种草（⚠️ 低情绪！不要 "OMG / obsessed / life changing"）</h4>
+    <div class="reply-line">i have one and it's <span class="hl">pretty good</span> honestly</div>
+    <div class="reply-line">my friend has this — <span class="hl">seems solid</span> might get one myself</div>
+    <div class="reply-line"><span class="hl">been looking at this</span> for a while, might pull the trigger soon</div>
+    <div class="reply-line">not gonna lie the <span class="hl">reviews are convincing me</span> 😅</div>
+  </div>
+
+  <div>
+    <h4>🔹 15% 社交证据</h4></div>
+</section>
+    <div class="reply-line">saw this on <span class="hl">my cousin's fyp</span> earlier now it's on mine too… TikTok u listening 👀</div>
+    <div class="reply-line">everyone in my comments is talking about this rn <span class="em">🔥</span></div>
+  </div>
+
+  <div>
+    <h4>🔹 10% 引导型（慎发）</h4>
+    <div class="reply-line">WAIT <span class="hl">WHERE DO I GET ONE</span> ⬇️⬇️</div>
+    <div class="reply-line">someone <span class="hl">drop the link</span> pls <span class="em">😭</span></div>
+  </div>
+
+  <h3>3.3 发布后节奏时间表（⚠️ 新号低风险版）</h3>
+
+  <div style="background:#fff9e6;border:1px solid #ffd93d;border-radius:10px;padding:10px 14px;margin-bottom:14px;font-size:0.82em;color:#555">
+    <strong>🆕 新号前 2 周特殊规则：</strong>以下时间表的 <strong>全部数字减半</strong>（比如 2 条改成 1 条），只发提问型评论，绝对不种草。等账号有 100+ 真实 follower 再用完整节奏。
+  </div>
+
+  <p>关键：小号不是在视频发布瞬间就冲进去评论！要模拟"自然刷到"的行为。<strong>越稀疏越不像 bot</strong>。</p>
+
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">0 – 45 分钟</div>
+      <p><strong>什么都不发</strong>。让视频先自然刷一会儿。小号这段时间正常刷 FYP 刷别人的视频（养号）。</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">45 – 90 分钟</div>
+      <p>第一批小号进场，发 <strong>1-2 条提问型评论</strong>（比如 "wait what material is this"）。间隔 <strong>至少 10 分钟</strong>。</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">2 – 4 小时</div>
+      <p>第二批小号跟上，<strong>1-2 条</strong>，同样提问型 + 偶尔一条温和种草。间隔 <strong>至少 20 分钟</strong>。</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">4 – 12 小时</div>
+      <p>每 <strong>2-3 小时才发 1 条</strong>。如果视频有真实评论进来，小号立刻退场 — 把空间让给真人。</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">12 小时后</div>
+      <p>一天最多再补 <strong>1-2 条</strong> social proof 型（"my friend has this"）。别多了。</p>
+    </div>
+  </div>
+
+  <div style="background:#fff5f5;border:1px solid #ffccd0;border-radius:8px;padding:10px 14px;margin-top:12px;font-size:0.82em;color:#555">
+    <strong>⚠️ 核心原则：</strong>
+    <br>• <strong>整条视频生命周期（3 天内）小号总量 ≤ 8-10 条</strong>（原来的时间表容易冲到 20+，太密集）
+    <br>• 间隔 <strong>绝对不能规律</strong> — 随机分布（10 分钟、37 分钟、2 小时都有）
+    <br>• 有真人评论进来的话，小号评论数 <strong>少于真人数量</strong> — 让评论区看起来是"人多"，不是"我们自己刷的"
+  </div>
+
+  <h3>3.4 🚨 安全红线（Critical — 必须遵守）</h3>
+  <div class="warn-box">
+    <strong>❌ 绝对不能做：</strong>
+    <ul>
+      <li>不同小号用 <strong>同一个设备 / IP</strong>（TK 设备指纹 + IP 关联检测非常强）</li>
+      <li>小号直接 @ 官方账号说"好广告""支持一下"</li>
+      <li>所有小号评论都是 <strong>批量复制粘贴</strong> 的一模一样的话</li>
+      <li>小号在视频发布 <strong>10 秒内</strong> 就冲进来评论（一看就是蹲点的）</li>
+      <li>小号之间互相回复形成 <strong>闭环对话</strong>（容易被算法检测为 bot network）</li>
+      <li>官方账号用小号的语气说话（人设不能混）</li>
+      <li>小号突然开始在你的评论区疯狂发评论（平时零互动的号突然活跃 = 死号）</li>
+    </ul>
+  </div>
+  <div class="safe-box">
+    <strong>✅ 正确做法：</strong>
+    <ul>
+      <li>每个小号用 <strong>独立设备</strong> 或 <strong>指纹浏览器</strong>（如 AdsPower / BitBrowser）</li>
+      <li>每个小号用 <strong>独立静态住宅 IP</strong>（不要用数据中心 IP）</li>
+      <li>小号平时 <strong>正常刷、正常发</strong>（养号期至少 7-14 天）</li>
+      <li>评论间隔要有 <strong>随机性</strong>（5 min · 15 min · 1 hr · 3 hr 都要有）</li>
+      <li>小号偶尔 <strong>"不帮自己说话"</strong>：假装中立评论、甚至问一个你不好回答的问题（增加真实感）</li>
+      <li>每条视频小号评论数 <strong>不超过 15 条</strong>（太多反而假）</li>
+      <li>每个小号每周帮你评论 <strong>不超过 3 次</strong>（不要过度消耗一个号）</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== PART 4: 工作流 ===================== -->
+<section>
+  <h2>⚙️ Part 4 · 评论区日常工作流</h2>
+
+  <h3>4.1 谁来回复什么</h3>
+  <div class="quick-grid">
+    <div class="quick-card">
+      <h4>🏷️ 官方账号回复</h4>
+      <p>产品咨询、物流、价格异议、负面投诉、真实用户的正向互动 —— 所有需要"权威回应"的场景。</p>
+    </div>
+    <div class="quick-card">
+      <h4>🕵️ 小号回复</h4>
+      <p>引导型评论（comment for link）、补充型种草、假装第三方面的对比评价、社交证据、帮你怼恶意投诉（但不跟投诉人对线）。</p>
+    </div>
+  </div>
+
+  <h3>4.2 回复速度要求</h3>
+  <div class="timeline">
+    <div class="tl-item">
+      <div class="tl-time">发布后 2 小时内</div>
+      <p>必须回复 <strong>前 10 条真实评论</strong>（不是小号）。TK 算法会在视频前 2 小时观察互动率，及时回复能提升推荐权重。</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">发布后 24 小时内</div>
+      <p>回复 <strong>所有产品咨询和正向互动评论</strong>。</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">负面投诉 → 2 小时内回应</div>
+      <p>先公开发一条共情+引导私信的回复，然后 DM 跟进解决。解决后礼貌请求删除评论。</p>
+    </div>
+    <div class="tl-item">
+      <div class="tl-time">视频爆了（>100K views）</div>
+      <p>暂停小号操作，<strong>全力回复真实用户</strong>。回复率越高，TK 给的流量越猛。可以选择性回复（优先提问 + 有趣评论）。</p>
+    </div>
+  </div>
+
+  <h3>4.3 升级处理流程</h3>
+  <div class="quick-grid">
+    <div class="quick-card">
+      <h4>🟢 一般问题</h4>
+      <p>直接用模板回复，或 1 句话即兴回应。</p>
+    </div>
+    <div class="quick-card">
+      <h4>🟡 售后问题</h4>
+      <p>评论区共情回复 → 私信处理 → 记录订单号 → 解决后请求删评。</p>
+    </div>
+    <div class="quick-card">
+      <h4>🔴 群体性负面</h4>
+      <p>暂停自评论 → 集中火力回复真实用户 → 排查产品本身有没有问题 → 必要时公开回应。</p>
+    </div>
+    <div class="quick-card">
+      <h4>⚫ 恶意水军/竞品</h4>
+      <p>评论区冷静回应一次 → 引导私聊 → 不接受就删除 + 屏蔽。不要对线。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PART 5: 禁忌 ===================== -->
+<section>
+  <h2>🚫 Part 5 · 绝对禁忌清单</h2>
+  <div class="warn-box">
+    <ul>
+      <li><strong>❌ 用翻译器直译回复</strong> —— 只要包含 "Thank you for purchasing our product" 这种完整长句，立刻露馅</li>
+      <li><strong>❌ 在评论区直接发链接</strong> —— TK 会判定 spam，轻则限流重则封号。<strong>引导话术看视频类型：</strong>
+        <ul style="margin:8px 0 8px 18px;font-size:0.9em">
+          <li>🚗 <strong>挂车视频（有购物车）</strong> → 说 <em>"linked in the cart 🛒"</em> / <em>"tap the cart in the corner"</em> / <em>"check the yellow cart"</em></li>
+          <li>📹 <strong>普通视频（没挂车）</strong> → 说 <em>"link in bio"</em> / <em>"bio has the link"</em> / <em>"link's on the page"</em></li>
+          <li>🚫 <strong>绝对不能</strong> 在评论区贴 raw URL（如 https://xxx.com）</li>
+        </ul>
+      </li>
+      <li><strong>❌ 和用户在评论区吵架</strong> —— 你赢了评论区，输了信任。私聊解决</li>
+      <li><strong>❌ 所有回复都是同一个模板</strong> —— 变着来！可以在模板基础上改改词、换换 emoji</li>
+      <li><strong>❌ 忽略负面评论</strong> —— 沉默 = 默认用户说的是真的。哪怕只回复 "sorry about that dm us"</li>
+      <li><strong>❌ 用机器人/脚本批量评论</strong> —— TK 的 bot detection 是全平台最严的，发现就封号</li>
+      <li><strong>❌ 过度营销感话术</strong> —— "Best quality lowest price!!!" → 像淘宝，不像 TK</li>
+      <li><strong>❌ 小号在同一时间批量发评论</strong> —— 时间戳一查就知道是脚本</li>
+      <li><strong>❌ 冒充真实用户然后自己暴露</strong> —— 比如小号说完 "link pls" 官方号立刻回复 "link in bio"，中间至少隔 5 分钟让其他观众也插话</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== PART 6: 快速卡片 ===================== -->
+<section>
+  <h2>⚡ Part 6 · 一页纸快速参考卡</h2>
+  <p style="margin-bottom:16px;">运营同学可以把这一页打印出来贴在桌上，或存手机里随时查。</p>
+
+  <div class="quick-grid">
+    <div class="quick-card">
+      <h4>🔥 最常用 3 个回复</h4>
+      <div class="reply-line">fr i'm lowkey obsessed with it too 😭✨</div>
+      <div class="reply-line">good question! runs true to size ✨ link has more details!</div>
+      <div class="reply-line">oh no that's awful 😭 dm me ur order # we'll fix it!</div>
+    </div>
+
+    <div class="quick-card">
+      <h4>🕵️ 小号首发三句</h4>
+      <div class="reply-line">wait what material is this? looks so soft 🥺</div>
+      <div class="reply-line">i need this so bad someone tell me where 👀</div>
+      <div class="reply-line">saw this on 3 fyp's today must be fire 🔥</div>
+    </div>
+
+    <div class="quick-card">
+      <h4>💡 价格异议模板</h4>
+      <div class="reply-line">i get it fr! but quality wise u won't find a comparable one cheaper ✂️</div>
+      <div class="reply-line">we have 15% off sale rn actually! link in bio 🛍️</div>
+    </div>
+
+    <div class="quick-card">
+      <h4>📦 物流模板</h4>
+      <div class="reply-line">same day ship, 3-5 days delivery! free shipping over $50 🚚</div>
+      <div class="reply-line">ship everywhere US! tracking goes to ur email ✉️</div>
+    </div>
+
+    <div class="quick-card">
+      <h4>💀 负面投诉首句</h4>
+      <div class="reply-line">oh no i'm so sorry 😭 dm me ur order # plz</div>
+      <div class="reply-line">that's not what we want — dm support we'll make it right</div>
+    </div>
+
+    <div class="quick-card">
+      <h4>🎨 Emoji Top 5</h4>
+      <p style="font-size:1.4em;letter-spacing:8px;">😭 💀 🫶 ✨ 🔥</p>
+      <p style="font-size:0.82em;color:#888;margin-top:4px;">每条回复最多用 3 个，句尾或自然嵌入</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section>
+  <h2>❓ 常见问题 FAQ</h2>
+
+  <div class="qna">
+    <div class="q">Q: 小号要养多久才能开始用？</div>
+    <div class="a">A: 至少 7-14 天。注册完之后每天正常刷 FYP、点赞、评论、关注一些博主、发 1-2 条简单的视频（比如对镜自拍、街头风景都可以）。让账号有真实行为轨迹后再用。</div>
+  </div>
+
+  <div class="qna">
+    <div class="q">Q: 被人发现我用小号刷评论了怎么办？</div>
+    <div class="a">A: 首先，按安全规则操作的话一般不会被发现。万一有人指出来，<strong>不承认、不理他</strong>。你越解释越实锤。其他真实用户也不会真的在意 —— 大家都是来逛的。</div>
+  </div>
+
+  <div class="qna">
+    <div class="q">Q: 评论区需要每条都回复吗？</div>
+    <div class="a">A: 不需要。优先回复 <strong>提问类、负面类、有趣的正向评论</strong>。机械性的"nice""cool""👍"可以不回。但视频前 2 小时内的评论要尽量多回，影响算法权重。</div>
+  </div>
+
+  <div class="qna">
+    <div class="q">Q: "link in bio" 和直接发链接有什么区别？</div>
+    <div class="a">A: TikTok 官方禁止在评论区、个人简介以外的地方发外部链接，判定为 spam。"link in bio" 是平台认可的引导方式，而且 bio 里的 linktree / 独立站链接也是可以放的。TK Shop 视频可以直接在视频里挂购物车。</div>
+  </div>
+
+  <div class="qna">
+    <div class="q">Q: 怎么知道我用的 IP 是不是住宅 IP？</div>
+    <div class="a">A: 去 whoer.net 或 browserleaks.com 查。住宅 IP = ISP 是 Comcast/AT&T/Verizon 这种民用运营商，数据中心 IP = DigitalOcean/AWS/Akamai。TK 只信住宅 IP。推荐用 Smartproxy / Oxylabs 的美国静态住宅代理。</div>
+  </div>
+
+  <div class="qna">
+    <div class="q">Q: 模板需要严格照抄吗？</div>
+    <div class="a">A: 绝对不要！模板只是 <strong>框架</strong>，每次用都要改动。换几个词、加一个你产品相关的细节、换个 emoji、加个缩写。重复度太高会被用户看出来，也可能被 TK 检测。</div>
+  </div>
+</section>
+
+<!-- ===================== PART 7: KPI ===================== -->
+<section>
+  <h2>📊 Part 7 · KPI 衡量体系 — 怎么知道评论区运营有没有用</h2>
+  <p style="margin-bottom:16px;">运营不能只凭感觉。每周花 15 分钟看这 5 个指标，就能知道评论区的健康度。</p>
+
+  <div class="quick-grid">
+    <div class="quick-card">
+      <h4>1️⃣ 前 2 小时回复率</h4>
+      <p><strong>目标：≥ 70%</strong></p>
+      <p>视频发布后 2 小时内，你回复了多少比例的真实评论？TK 算法在这个窗口最敏感，回复率直接影响后续推流。</p>
+    </div>
+    <div class="quick-card">
+      <h4>2️⃣ 平均首次回复时间</h4>
+      <p><strong>目标：≤ 15 分钟</strong></p>
+      <p>从评论发出到你首次回复的平均分钟数。可以在 TK 创作者后台手动统计，或者用第三方工具。</p>
+    </div>
+    <div class="quick-card">
+      <h4>3️⃣ 情绪比 (Sentiment Ratio)</h4>
+      <p><strong>目标：正向 ≥ 85%</strong></p>
+      <p>随机抽取 20 条真实评论，标记为正向 / 中性 / 负向。负面评论如果持续 > 15%，要排查产品本身。</p>
+    </div>
+    <div class="quick-card">
+      <h4>4️⃣ 评论互动深度</h4>
+      <p><strong>目标：≥ 2.0</strong></p>
+      <p>每条真实评论平均能引来多少条回复（包括你、小号、其他用户的）。数字越高说明评论区氛围越活跃。</p>
+    </div>
+    <div class="quick-card">
+      <h4>5️⃣ 评论 → 转化</h4>
+      <p><strong>参考指标</strong></p>
+      <p>如果用独立站：埋点追踪 "link in bio" 点击 → 下单的转化率。如果用 TK Shop：看带购物车视频的评论量 vs 购物车点击率的相关性（有正相关 = 评论运营有效）。</p>
+    </div>
+    <div class="quick-card">
+      <h4>6️⃣ 小号安全审计频率</h4>
+      <p><strong>每月 1 次</strong></p>
+      <p>检查所有小号：有没有被 TK 标记（头像模糊/功能受限）、有没有设备关联风险、评论内容是否出现重复模式。有问题的号暂停使用。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PART 8: TK Shop ===================== -->
+<section>
+  <h2>🛒 Part 8 · TikTok Shop 特有场景补充</h2>
+  <p style="margin-bottom:16px;">如果你是用 <strong>TikTok Shop</strong>（不是独立站引流）带货，以下几点需要额外注意。</p>
+
+  <h3>8.1 带购物车视频的评论区区别</h3>
+  <ul>
+    <li>TK Shop 视频会在右下角显示 <strong>黄色购物车图标</strong>，用户一眼知道这是带货视频</li>
+    <li>官方账号 <strong>不能</strong> 在评论区说 "link in bio" — 你的购物车就在那！应该说 <em>"tap the cart in the corner 🛒"</em></li>
+    <li>常见问题变成了 "is it on sale?" "does it ship to [州名]?" "how do I return?" — 模板可以参考 Part 2 但要把引导改成购物车</li>
+  </ul>
+
+  <h3>8.2 直播评论运营</h3>
+  <div class="template-block">
+    <div class="template-label">引导看购物车</div>
+    <div class="reply-line">all items linked below in the cart 🛒 <span class="hl">tap tap tap</span></div>
+  </div>
+  <div class="template-block">
+    <div class="template-label">针对特定品</div>
+    <div class="reply-line">[产品名] is item <span class="hl">#3</span> in the cart! <span class="hl">linked here →</span></div>
+  </div>
+  <div class="template-block">
+    <div class="template-label">小号在直播间的作用</div>
+    <div class="reply-line">OMG <span class="hl">#2 is fire</span> just added to cart <span class="em">🔥</span></div>
+    <div class="reply-line">is <span class="hl">#5 in stock</span>? clicking now</div>
+  </div>
+
+  <h3>8.3 美区 TK Shop 物流现状提醒</h3>
+  <div class="safe-box">
+    <p>截至 2024 年底，美区 TikTok Shop <strong>全面取消了自发货（Seller Shipping）模式</strong>，所有订单必须走官方物流 <strong>TikTok Shop Logistics Services</strong>。所以物流相关评论可以更自信地回答，时效和追踪信息都由 TK 系统管理，用户在 app 内就能查。</p>
+  </div>
+</section>
+
+<!-- ===================== PART 9: 合规 ===================== -->
+<section>
+  <h2>⚖️ Part 9 · FTC 合规提醒（重要）</h2>
+  <div class="warn-box">
+    <p><strong>美国联邦贸易委员会（FTC）</strong> 规定：任何涉及利益相关的背书（endorsement）必须 <strong>明确披露</strong>。</p>
+    <p>用小号在评论区发正向评价，如果这些小号和你有关联但 <strong>没有披露</strong>，理论上可能违反 FTC 规定，面临最高 <strong>$50,120 / 违规</strong> 的罚款。</p>
+    <p><strong>但实操中的边界：</strong></p>
+    <ul>
+      <li>FTC 主要追查 <strong>KOL/网红虚假代言</strong>（收了钱不披露），对普通商家小号的追查非常罕见</li>
+      <li>你的小号如果不是"付费代言"而是"自己账号互动"，风险更低 —— 但法律上仍属于灰色地带</li>
+      <li>如果小号内容是 <strong>真实的评价（可以是你自己真的用过的东西）</strong>，风险进一步降低</li>
+    </ul>
+    <p><strong>建议：</strong> 如果团队有条件，咨询一下熟悉 FTC 广告法规的律师。小号操作本身没问题，但 <strong>不要让小号假装成"付费测评博主"</strong> 去发虚假负面踩竞品（那才是高风险）。</p>
+  </div>
+</section>
+
+<!-- ===================== PART 10: 分品专属 SOP 索引 ===================== -->
+<section>
+  <h2>📦 Part 10 · 分品专属 SOP（独立文件索引）</h2>
+  <p style="margin-bottom:20px;">以下 6 个品的完整 SOP 已拆分为 <strong>独立 HTML 文件</strong>，每个文件包含 8-12 个预测评论场景 × 3-5 条回复变体 + 小号种子池 + 专属 Do/Don't。点击整张卡片直接打开，分配给负责该品的运营同学。</p>
+
+  <div class="quick-grid">
+    <a class="quick-card" href="SOP_01_ToiletWand.html" style="text-decoration:none;color:inherit">
+      <h4>🚽 SOP_01 · Disposable Toilet Wand</h4>
+      <p>一次性马桶刷 · 核心：hygiene 痛点 + 环保质疑应对</p>
+      <p style="font-size:0.8em;color:#ff2d55;margin-top:8px;font-weight:600">👉 点击打开</p>
+    </a>
+    <a class="quick-card" href="SOP_02_TileScrubBrush.html" style="text-decoration:none;color:inherit">
+      <h4>🧽 SOP_02 · Tile Scrub Brush</h4>
+      <p>浴室瓷砖刷 · 核心：before/after satisfying + grout 清洁力</p>
+      <p style="font-size:0.8em;color:#ff2d55;margin-top:8px;font-weight:600">👉 点击打开</p>
+    </a>
+    <a class="quick-card" href="SOP_03_LemonSqueezer.html" style="text-decoration:none;color:inherit">
+      <h4>🍋 SOP_03 · Lemon Squeezer</h4>
+      <p>柠檬压榨器 · 核心：手挤痛点 + 厨房 daily use</p>
+      <p style="font-size:0.8em;color:#ff2d55;margin-top:8px;font-weight:600">👉 点击打开</p>
+    </a>
+    <a class="quick-card" href="SOP_04_EggCooker.html" style="text-decoration:none;color:inherit">
+      <h4>🥚 SOP_04 · Egg Cooker</h4>
+      <p>煮蛋器 · 核心：meal prep 懒人便利 + 溏心蛋焦虑</p>
+      <p style="font-size:0.8em;color:#ff2d55;margin-top:8px;font-weight:600">👉 点击打开</p>
+    </a>
+    <a class="quick-card" href="SOP_05_LightUpBoard.html" style="text-decoration:none;color:inherit">
+      <h4>💡 SOP_05 · Light Up Board（给孩子的画板）</h4>
+      <p>发光亚克力画板 · 核心：圣诞礼物 + 家长向</p>
+      <p style="font-size:0.8em;color:#ff2d55;margin-top:8px;font-weight:600">👉 点击打开</p>
+    </a>
+    <a class="quick-card" href="SOP_06_FruitPurifier.html" style="text-decoration:none;color:inherit">
+      <h4>🥬 SOP_06 · Fruit Veggie Purifier</h4>
+      <p>果蔬净化器 · 核心：信任建立 + 伪科学质疑三连击</p>
+      <p style="font-size:0.8em;color:#ff2d55;margin-top:8px;font-weight:600">👉 点击打开</p>
+    </a>
+  </div>
+</section>
+
+
+<footer>
+  <p>这份 SOP 基于美区 TikTok 评论生态的实战经验编写，持续迭代更新中</p>
+  <p style="margin-top:8px;">最后更新：2025 年 · 版本 2.1</p>
+</footer>
+
+</main>
+
+<script>
+function switchTab(tabId) {
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById(tabId).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ========== 英文回复 → 中文翻译字典 ==========
+// key = reply-line 的纯文本（去空格后匹配）
+// value = 地道的中文意译（不是逐字翻译，保留梗的味道）
+const translations = {
+  // ===== Part 2 Tab 1: 正向喜爱 =====
+  "fr i'm lowkey obsessed with it too 😭✨": "真的 我也有点上头了 😭✨",
+  "yesss get it bestie 🫶 link in bio if u haven't already!": "冲啊姐妹 🫶 还没买的快去 bio 点链接！",
+  "no cap this thing SLAPS u won't regret it 💯": "不骗你这东西真绝了 买了绝对不后悔 💯",
+  "the way u just saved my wallet AND my aesthetic omg 🔥": "你简直救了我的钱包和审美 🔥",
+  "real talk i use this every single day worth every penny fr": "实话说我天天都在用 每一分钱都值",
+
+  // ===== Part 2 Tab 2: 产品咨询 =====
+  "good question! it's 100% cotton, runs true to size ✨ if ur between sizes size up!": "好问题！100% 棉 正常码 ✨ 两个码之间建议拍大",
+  "ooh great taste — this one comes in black, cream + sage green 🌿 link has all color options!": "好眼光！黑/奶油/鼠尾草绿都有 🌿 链接里全色可选！",
+  "it's actually perfect for that! i use it for 具体场景 all the time 😌": "那简直太适合了！我平时也用在 [具体场景] 上 😌",
+  "honestly i was skeptical too but it's surprisingly durable — mine's been through like 20 washes": "说实话我一开始也存疑 但真的很耐用 我的都洗了 20 次了",
+  "check the product description it has all the specs! lmk if u still can't find it ✨": "去商品详情页看 那里有完整参数！找不到跟我说 ✨",
+
+  // ===== Part 2 Tab 3: 价格异议 =====
+  "i get it fr! but quality wise u won't find a comparable one for cheaper — we cut out the middleman ✂️": "懂你！但这质量真找不到更便宜的同款了 — 我们跳过了中间商 ✂️",
+  "lowkey valid, but think of it this way — u won't need to replace this in 6 months 😉": "说得有点道理 但换个角度想 — 你半年内都不用换新的 😉",
+  "we're running a 15% off sale right now actually! link in bio 🛍️": "刚好我们现在打 85 折！去 bio 点链接 🛍️",
+  "heard! price matching isn't possible but we just dropped a free shipping code → FREESHIP50": "收到！价格没法再降 但给你免邮码 → FREESHIP50",
+  "honestly i thought that too until mine arrived — quality hits different fr worth it": "我也这么想过 但收到货后真不一样 — 这质量值了",
+
+  // ===== Part 2 Tab 4: 物流 =====
+  "we ship same day and it arrives in 3-5 business days! free shipping over $50 🚚": "当日发货 3-5 工作日到！满 $50 免邮 🚚",
+  "yep we ship everywhere in the US! tracking number goes straight to ur email once it's out ✉️": "对 全美都发！发货后物流单号直接发你邮箱 ✉️",
+  "honestly shipping's been wild lately but our team's on it — dm me ur order # if it's taking too long!": "说实话最近物流有点乱 但我们一直在盯 — 太慢了私信我订单号！",
+  "all orders go through TikTok Shop logistics now! check ur order tab in the app for real-time tracking 📦": "现在全部走 TikTok Shop 官方物流了！app 订单页查实时追踪 📦",
+
+  // ===== Part 2 Tab 5: 负面投诉 =====
+  "oh no that's awful 😭 i'm so sorry dm me ur order # and we'll fix this right away!": "啊这太糟了 😭 对不起！私信我订单号我们马上处理！",
+  "that's not the experience we want for anyone… pls dm support we'll make it right 💔": "这不是我们想给任何人的体验… 麻烦私信客服 我们搞定 💔",
+  "hmm sorry to hear that! can u dm me what exactly went wrong? eager to sort this out": "嗯抱歉！能私信告诉我具体哪里出问题了吗？很想帮你解决",
+  "we're always open to feedback but this feels harsh — hope u have a better day 🫶": "我们欢迎反馈 但这话有点冲 — 祝你今天开心点 🫶",
+  "i've had mine for 3 months no issues — maybe just a one-time thing? 🤷‍♀️": "我用了三个月没出过问题 — 可能是个别情况？🤷‍♀️",
+
+  // ===== Part 2 Tab 6: 对比竞品 =====
+  "great q! honestly [竞品] is good but ours has [独特卖点] that sets it apart ✨": "好问题！说实话 [竞品] 不错 但我们的 [独特卖点] 是独家优势 ✨",
+  "we love [竞品] too tbh but this one's more [特性] for sure — check the reviews!": "实话说我们也喜欢 [竞品] 但这个 [特性] 更明显 — 看看其他评论！",
+  "lowkey fair, but the quality difference is real once u hold it. no cap 🤝": "有点道理 但你拿到手上就知道质量差多少了 不骗你 🤝",
+  "had both tbh… this one feels way more premium in hand, worth the extra $20": "两个我都用过… 这个质感好太多 多花 $20 值",
+
+  // ===== Part 2 Tab 7: 引导互动（小号用） =====
+  "WAIT COMMENT FOR LINK ⬇️⬇️⬇️": "等等 评论要链接 ⬇️⬇️⬇️",
+  "i need this so bad someone tell me where to get it 👀": "我太想要了 谁告诉我在哪买 👀",
+  "ok but fr how do i buy this send help 😭": "好吧但我到底怎么买啊 救命 😭",
+  "saw this on 3 different fyp's today must be fire 🔥": "今天刷了 3 次才刷到 这肯定很火 🔥",
+  "not me already typing in the bio 🏃‍♀️💨": "我已经在 bio 里点链接了 🏃‍♀️💨",
+
+  // ===== Part 2 Tab 8: 垃圾广告 =====
+  "nice try lol 🤡": "想得美哈哈 🤡",
+  "def a scam bot ignore + report ⚠️": "绝对是诈骗机器人 忽略并举报 ⚠️",
+
+  // ===== Part 2 Tab 9: UGC 分享 =====
+  "YESS let us know how u love it when it comes in! 🫶": "好！收到了告诉我们你喜不喜欢！🫶",
+  "OMW send pics when u get it 😭✨": "好耶 收到了发照片啊 😭✨",
+  "real ones supporting real ones — enjoy it queen 👑": "真粉支持真粉 — 好好享受吧女王 👑",
+  "love this! tag us in ur pics we repost our faves weekly 📸": "好！记得 tag 我们 每周转发最棒的 📸",
+
+  // ===== Part 3: 小号评论类型（独立 reply-line） =====
+  "wait what material is this? looks so soft 🥺": "等等这是什么材质？看起来好软 🥺",
+  "does it come in smaller? i'm 5'2 worried it'll be too long": "有更小的码吗？我 158 怕太长了",
+  "honest reviews only — is it worth $40?": "只要真实评价 — $40 值吗？",
+  "omg i have this and it's SO good — took my money no regrets 💯": "我有这个！真的好 — 花了钱不后悔 💯",
+  "no cap i ordered 2 one for me one for my mom she loved it fr": "不骗你我买了两个 自己一个送我妈 我妈也超喜欢",
+  "the quality is insane for the price like actually crazy": "这个价位的质量真的离谱 好到炸裂",
+  "saw this on my cousin's fyp earlier now it's on mine too… TikTok u listening 👀": "刚才刷到我表姐的推荐 现在我也刷到了… TikTok 你在监听吗 👀",
+  "everyone in my comments is talking about this rn 🔥": "我评论区所有人现在都在聊这个 🔥",
+  "WAIT WHERE DO I GET ONE ⬇️⬇️": "等等 在哪买 ⬇️⬇️",
+  "someone drop the link pls 😭": "谁发个链接啊 😭",
+
+  // ===== Part 6 快速卡片（简化版回复） =====
+  "fr i'm lowkey obsessed with it too 😭✨": "真的我也有点上头 😭✨",
+  "good question! runs true to size ✨ link has more details!": "好问题！正常码 ✨ 链接里有细节！",
+  "oh no that's awful 😭 dm me ur order # we'll fix it!": "啊太糟了 😭 私信我订单号我们马上处理！",
+  "i need this so bad someone tell me where 👀": "我太想要了 谁告诉我在哪 👀",
+  "saw this on 3 fyp's today must be fire 🔥": "今天刷了 3 次 肯定爆火 🔥",
+  "i get it fr! but quality wise u won't find a comparable one cheaper ✂️": "懂！但这质量找不到更便宜的了 ✂️",
+  "we have 15% off sale rn actually! link in bio 🛍️": "刚好 85 折！bio 点链接 🛍️",
+  "same day ship, 3-5 days delivery! free shipping over $50 🚚": "当日发 3-5 天到！满 $50 免邮 🚚",
+  "ship everywhere US! tracking goes to ur email ✉️": "全美都发！物流发你邮箱 ✉️",
+  "oh no i'm so sorry 😭 dm me ur order # plz": "啊对不起 😭 私信我订单号",
+  "that's not what we want — dm support we'll make it right": "这不是我们想给你的体验 — 私信客服我们搞定",
+
+  // ===== Part 8: TikTok Shop 特有 =====
+  "all items linked below in the cart 🛒 tap tap tap": "所有品在下面购物车里 🛒 点它点它点它",
+  "[产品名] is item #3 in the cart! linked here →": "[产品名] 是购物车第 3 号！这里点 →",
+  "OMG #2 is fire just added to cart 🔥": "天哪 2 号太火了 我刚加了 🔥",
+  "is #5 in stock? clicking now": "5 号还有货吗？我现在就在点",
+
+  // ===== Part 10 分品专属 =====
+  // Product A: Disposable Toilet Wand
+  "wait does this actually work on hard water stains?": "等等这真的能搞定硬水渍吗？",
+  "fr i was skeptical too but the scrubbing pad is crazy durable — mine removed 2 weeks of gunk no problem": "我一开始也怀疑 但这个刷头真的耐用 — 我的两周的污渍都清掉了",
+  "honestly the blue pad is pre-loaded with cleaner 😌 just scrub and flush!": "说实话蓝色刷头上自带清洁剂 😌 刷两下冲掉就行！",
+  "isn't this wasteful plastic tbh": "说实话这不是浪费塑料吗",
+  "great question! yeah the heads are single-use, we don't deny that. BUT handle is reusable for years, and honestly way less gross than a traditional brush that harbors mold for years 🤢": "实话说：对 刷头是一次性的，我们不否认。但手柄能用好几年，比那种长霉的传统刷子干净太多 🤢",
+  "where do u get refill heads separately?": "刷头单独在哪买？",
+  "refills come in packs of 30 linked in the cart 🛒 way cheaper than buying a new wand!": "替换装 30 个一包 购物车里有 🛒 比买新刷子便宜多了！",
+  "wait the wand head is so satisfying to use omg 😭": "等等这个刷头用起来太爽了 😭",
+  "my mom got me this and my bathroom smells amazing now 🤝": "我妈送我的 现在厕所闻起来超香 🤝",
+  "finally a toilet brush that doesn't gross me out 😌": "终于有个马桶刷不恶心我了 😌",
+
+  // Product B: Tile Scrub Brush
+  "does this work on black grout? mine's so gross": "这个能刷黑色瓷砖缝吗？我的好脏",
+  "yesss the stiff bristles get deep in grout lines 🤝 pair with baking soda for the magic combo!": "可以！硬毛刷能深入砖缝 🤝 配小苏打简直绝配！",
+  "do the bristles fall out easily? cheap ones break fast": "刷毛容易掉吗？便宜的很快就坏",
+  "ours are double-stapled no joke — mine's been through 15 scrubbing sessions and not one lost bristle 💯": "我们的是双钉固定不骗你 — 刷了 15 次一根毛都没掉 💯",
+  "comfortable handle? my wrist hurts from scrubbing": "手柄舒服吗？刷东西手好酸",
+  "ergonomic grip for sure! long enough handle u don't even need to bend over ✨": "人体工学握把！手柄够长 你都不用弯腰 ✨",
+  "the way this made my grout look brand new 😭😭😭": "这刷完砖缝跟新的一样 😭😭😭",
+  "been needing one of these forever finally pulled the trigger": "我早想买了终于下单了",
+
+  // Product C: Lemon Squeezer
+  "does it filter seeds or will they all get in my drink?": "会过滤籽吗？不然全跑饮料里了",
+  "built-in strainer catches 100% of seeds fr — juice comes out clear 🍋✨": "内置滤网兜住 100% 的籽 果汁清清爽爽 🍋✨",
+  "won't this break first week? plastic ones are fragile": "不会第一周就坏吧？塑料的容易碎",
+  "it's heavy-duty aluminum 😌 not cheap plastic — mine's 1 year old still going": "是加厚铝的 😌 不是破塑料 — 我用了一年还好好的",
+  "honestly way more juice than hand squeezing + no sticky hands": "实话说比手挤汁多多了 手上还不粘",
+  "just bought for my mom she's obsessed 🫶": "刚给我妈买了她超喜欢 🫶",
+  "the way this squeezes every last drop no cap 💯": "真的能榨干最后一滴 💯",
+  "my smoothie game is forever changed 🍋🥤": "我的思慕雪直接上了个档次 🍋🥤",
+
+  // Product D: Egg Cooker
+  "will eggs explode in this lol that would be scary": "蛋会炸吗哈哈 那就吓人了",
+  "it has a built-in timer so it auto-shuts off — zero explosions fr 🤝": "有内置计时器自动断电 — 绝对不会爆 🤝",
+  "does it do perfect soft boiled? runny yolk only": "能煮完美溏心蛋吗？就要流心的",
+  "yesss set it to 6 mins for runny yolk 🍳 it tells u exactly!": "可以！6 分钟就是流心 🍳 它直接告诉你时间！",
+  "how many eggs can it fit at once?": "一次能放几个蛋？",
+  "6 eggs max! perfect for weekly meal prep 🥚📦": "最多 6 个！每周备餐刚好 🥚📦",
+  "finally meal prep eggs that don't come out rubbery 💀": "终于有不发硬的备餐蛋了 💀",
+  "lazy girl breakfast hack — 10 mins no work 🥚✨": "懒女孩早餐神器 — 10 分钟啥也不用做 🥚✨",
+
+  // Product E: Light Up Acrylic Message Board
+  "is it bright enough? or like dim night light only": "够亮吗？还是只是暗暗的小夜灯",
+  "it has 3 brightness settings — cozy glow → full desk lamp mode ✨": "有 3 档亮度 — 温馨柔光到工作台灯模式 ✨",
+  "what kind of markers work on it? dry erase?": "用什么笔写？白板笔？",
+  "comes with its own neon markers 🖍️ dry erase wipes right off!": "自带霓虹马克笔 🖍️ 一擦就掉！",
+  "perfect for my dorm omg adding this to my cart": "太适合我宿舍了 马上下单",
+  "yesss dorm essential! link in the cart ✨": "宿舍必备！购物车里有链接 ✨",
+  "this is so aesthetic for my desk setup fr 🫶✨": "这跟我桌面搭配太绝了 🫶✨",
+  "saw this on my fyp at 2am and had to have it 💀💸": "凌晨 2 点刷到 不买不行 💀💸",
+  "my room went from boring to cozy vibes instantly 🕯️💡": "我房间瞬间从无聊变温馨 🕯️💡",
+
+  // Product F: Fruit Veggie Purifier
+  "does this actually work or is it just BS pseudoscience?": "这真的有用吗？还是伪科学骗人的？",
+  "honest answer: it uses food-grade ozone + ultrasonic to break down surface pesticides. don't get us wrong — not magic, but it's better than plain water fr 🥬": "实话说：它用食品级臭氧 + 超声波分解表面农药。别误会 — 不是魔法 但比清水强 🥬",
+  "is ozone safe? i heard it's bad for humans": "臭氧安全吗？听说对人有害",
+  "great question — this generates low-level food-safe ozone that dissipates in 30 sec. FDA approved for food contact ✅": "好问题 — 这个产生的是低浓度食品级臭氧 30 秒就挥发了。FDA 认证 ✅",
+  "is it better than just washing with vinegar?": "比用醋洗好吗？",
+  "vinegar works for surface stuff, this gets microscopic residue. we use both tbh 🤝": "醋洗表面 这个清微细残留。我们两个都用 🤝",
+  "honestly i was skeptical too but the water after was actually gross 😭": "我一开始也不信 但洗出来的水真的很脏 😭",
+  "my dad's a chemist and he says this is legit so i trust it 🤓": "我爸是化学家 他说这是真的 所以我信了 🤓",
+  "idk if it's placebo or not but produce tastes cleaner now 🥒": "不知道是不是心理作用 但蔬菜确实更干净的口感 🥒"
+};
+
+// 对 textContent 做标准化：去多余空格、转小写、保留 emoji
+function normalize(s) {
+  return s.replace(/\s+/g, ' ').trim();
+}
+
+// 在页面加载后，给每个 .reply-line 追加中文翻译
+document.addEventListener('DOMContentLoaded', function() {
+  const lines = document.querySelectorAll('.reply-line');
+  let matched = 0;
+  lines.forEach(el => {
+    const key = normalize(el.textContent);
+    if (translations[key]) {
+      const cn = document.createElement('div');
+      cn.className = 'reply-cn';
+      cn.textContent = translations[key];
+      el.parentNode.insertBefore(cn, el.nextSibling);
+      matched++;
+    }
+  });
+  console.log(`✓ 已给 ${matched}/${lines.length} 条回复添加中文翻译`);
+});
+</script>
+
+</body>
+</html>
